@@ -20,11 +20,6 @@ function compareVersions(v1, v2) {
         return parsedVersion.filter(element => stage.hasOwnProperty(element)).length <= 1;
     }
 
-	// Multipliers for each version position
-	const versionMultipriers = {
-		0: 1000000, 1: 100000, 2: 10000, 3: 1000, 4: 100, 5: 10, 6: 1,
-	};
-
 	// Function to compare versions
 	function compareVersions(v1, v2) {
 		// Temporary versions values (to find which is greater)
@@ -71,10 +66,8 @@ function compareVersions(v1, v2) {
 				}
 			}
 
-			// Each substring has it's own multiplyer to have the priority
-			const multiprier = versionMultipriers[i];
-			version1 *= multiprier;
-			version2 *= multiprier;
+			version1 *= 10;
+			version2 *= 10;
 		}
 
 		if (version1 > version2) {
