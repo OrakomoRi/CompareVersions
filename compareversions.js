@@ -66,6 +66,7 @@ function compareVersions(v1, v2) {
 				}
 			}
 
+			// Each substring has it's own priority
 			version1 *= 10;
 			version2 *= 10;
 		}
