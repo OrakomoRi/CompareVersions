@@ -9,9 +9,7 @@ Integrate it on your page by the following [link](https://raw.githubusercontent.
 ### Example in \<head\> element
 
 ```html
-<head>
-	<script src="https://cdn.jsdelivr.net/gh/OrakomoRi/CompareVersions@main/JS/compareversions.min.js" defer>
-</head>
+<script src="https://cdn.jsdelivr.net/gh/OrakomoRi/CompareVersions@main/JS/compareversions.min.js">
 ```
 
 ## Usage
