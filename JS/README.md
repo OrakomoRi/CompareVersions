@@ -10,7 +10,7 @@ Integrate it on your page by the following [link](https://raw.githubusercontent.
 
 ```html
 <head>
-	<script src="https://raw.githubusercontent.com/OrakomoRi/CompareVersions/main/JS/compareversions.min.js" defer>
+	<script src="https://cdn.jsdelivr.net/gh/OrakomoRi/CompareVersions@main/JS/compareversions.min.js" defer>
 </head>
 ```
 
