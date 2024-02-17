@@ -1,25 +1,20 @@
-# Compare Versions Tool
+# Compare Versions Tool 2.0.0
 
-The compareVersions function is a JavaScript utility for comparing two version strings and determining their relationship. The comparison considers numerical values as well as predefined stage values, e.g., 'alpha', 'beta', etc. (for the full list visit documentation about [Version string format](#version-string-format)).
+Based on [Semantic Versioning 2.0.0](https://semver.org/).
+
+The compareVersions function is a JavaScript utility for comparing two version strings and determining their relationship. The comparison considers numerical values as well as additional identifiers that can contain both letters and numbers (for the full list visit documentation about [official documentation](https://semver.org/#semantic-versioning-specification-semver)).
 
 ## Connect
 
-Integrate it on your page by the following [link](https://raw.githubusercontent.com/OrakomoRi/CompareVersions/main/compareversions.min.js)
-
-### Example in \<head\> element
-
-```html
-<head>
-	<script src="https://raw.githubusercontent.com/OrakomoRi/CompareVersions/main/compareversions.min.js" defer>
-</head>
-```
-
-## Usage
-```js
-let result = compareVersions(version1, version2);
-```
+You can check the needed folder (e.g. JS, PY, etc.) to find the way to connect.
 
 ## Documentation
+
+### Function by itself
+
+```
+compareVersions(version1, version2)
+```
 
 ### Parameters
 
@@ -30,9 +25,9 @@ let result = compareVersions(version1, version2);
 
 #### Normal
 
-- **1**: Indicates that *version1* is greater than *version2*
-- **-1**: Indicates that *version1* is less than *version2*
-- **0**: Indicates that *version1* is equal to *version2*
+- **1**: Indicates that '*version1*' is greater than '*version2*'
+- **-1**: Indicates that '*version1*' is less than '*version2*'
+- **0**: Indicates that '*version1*' is equal to '*version2*'
 
 #### Error
 
@@ -41,22 +36,31 @@ let result = compareVersions(version1, version2);
 
 ### Version string format
 
-- Stage values like '*pre*', '*alpha*', '*beta*', '*gamma*', '*delta*', '*release*', '*final*' are supported
+- Version number in format: MAJOR.MINOR.PATCH
 
-- The version strings can contain numerical values separated by dots, underscores and hyphens
+- Pre-release identifiers are available after '-' ```(hyphen)``` symbol
+
+- Build metadata identifiers are available after '+' ```(plus)``` sign
+
+- Version MAY NOT contain pre-release or metadata identifiers, buy it MAY contain one or both of them
+
+- If the initial letters of two prereleases of versions are the same then the version with the most characters will be greater.
 
 ### Examples
 
 #### Correct version format
 
-- 4.2_alpha2
-- 1.5
+- 1.5.0
 - 1.2.3-pre1.2.3
-- 1.7_final-2
 - 0.2.4-release
+- 2.9.3-rc.3.beta
+- 2.2.9+version------fixed
+- 0.0.1+build0.1
 
 #### Incorrect format
 
-- 5.2 pre-5 (spaces cannot be used)
-- 1.7_sigma-2 (sigma is not the supported stage)
+- 1 (common version number MUST take the form X.Y.Z)
+- 3.8 (common version number MUST take the form X.Y.Z)
+- 5.2 build-5 (spaces cannot be used)
+- 4.2_alpha2 (underscore cannot be used)
 - v1,4 (no comma can be used, also no 'v' before version is needed)
