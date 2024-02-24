@@ -3,6 +3,7 @@
 Based on [Semantic Versioning 2.0.0](https://semver.org/).
 
 The compareVersions function is a JavaScript utility for comparing two version strings and determining their relationship. The comparison considers numerical values as well as additional identifiers that can contain both letters and numbers.
+
 For full understanding visit the [official documentation](https://semver.org/#semantic-versioning-specification-semver).
 
 ## Connect
