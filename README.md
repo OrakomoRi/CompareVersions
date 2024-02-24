@@ -42,9 +42,11 @@ compareVersions(version1, version2)
 
 - Build metadata identifiers are available after '+' ```(plus)``` sign
 
-- Version MAY NOT contain pre-release or metadata identifiers, buy it MAY contain one or both of them
+- A version MAY NOT contain pre-release or metadata identifiers, but it MAY contain either one of them or both simultaneously.
 
 - If the initial letters of two prereleases of versions are the same then the version with the most characters will be greater.
+
+- If one version contains build metadata and the other does not, and both versions have the same MAJOR.MINOR.PATCH, and they have no pre-releases or their pre-releases are the same, these versions are considered equal
 
 ### Examples
 
