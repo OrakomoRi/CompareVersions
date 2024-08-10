@@ -1,4 +1,4 @@
-# Compare Versions Tool (JS version)
+# Compare Versions Tool (JavaScript version)
 
 This version is designed for web applications.
 
