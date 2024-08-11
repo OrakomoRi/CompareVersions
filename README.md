@@ -1,4 +1,4 @@
-# Compare Versions Tool 2.0.0
+# Compare Versions Tool
 
 Based on [Semantic Versioning 2.0.0](https://semver.org/).
 
