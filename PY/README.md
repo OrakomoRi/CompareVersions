@@ -1,6 +1,6 @@
 # Compare Versions Tool (Python version)
 
-This version is designed for web applications.
+This version is designed for python applications.
 
 ## Connect
 
