@@ -2,7 +2,7 @@
 
 Based on [Semantic Versioning 2.0.0](https://semver.org/).
 
-The compareVersions function is a utility for comparing two version strings and determining their relationship. The comparison considers numerical values as well as additional identifiers that can contain both letters and numbers.
+A utility for comparing two version strings and determining their relationship. The comparison considers major, minor, and patch numbers as well as pre-release identifiers.
 
 For full understanding visit the [official documentation](https://semver.org/#semantic-versioning-specification-semver).
 
@@ -57,8 +57,19 @@ Throws an exception if either version string has an incorrect format.
 
 #### Incorrect format
 
-- 1 (common version number MUST take the form X.Y.Z)
-- 3.8 (common version number MUST take the form X.Y.Z)
-- 5.2 build-5 (spaces cannot be used)
-- 4.2_alpha2 (underscore cannot be used)
-- v1,4 (no comma can be used, also no 'v' before version is needed)
+- `1` — version MUST take the form X.Y.Z
+- `3.8` — version MUST take the form X.Y.Z
+- `5.2 build-5` — spaces are not allowed
+- `4.2_alpha2` — underscores are not allowed
+- `v1.4` — versions prefixed with `v` are not supported
+
+### Comparison examples
+
+| Version A     | Version B     | Result |
+|---------------|---------------|--------|
+| `1.0.0`       | `1.0.1`       | `-1`   |
+| `2.1.0`       | `2.0.9`       | `1`    |
+| `1.0.0`       | `1.0.0`       | `0`    |
+| `1.0.0-alpha` | `1.0.0`       | `-1`   |
+| `1.0.0-beta`  | `1.0.0-alpha` | `1`    |
+| `1.0.0+1`     | `1.0.0+2`     | `0`    |
