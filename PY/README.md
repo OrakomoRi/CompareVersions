@@ -10,7 +10,11 @@ Download the `.py` file from the [link](https://github.com/OrakomoRi/CompareVers
 ```python
 from compareversions import compare_versions
 # If you have placed the file in a some folder(s) relative to main, write the path to the file
-# Like: from modules/compareversions import compare_versions
+# Like: from modules.compareversions import compare_versions
 
 result = compare_versions(version1, version2)
 ```
+
+## Errors
+
+Raises a `ValueError` if either version string has an incorrect format.

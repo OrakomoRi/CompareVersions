@@ -8,11 +8,11 @@ For full understanding visit the [official documentation](https://semver.org/#se
 
 ## Connect
 
-You can check the needed folder (e.g. JS, PY, etc.) to find the way to connect.
+Check the needed folder (e.g. JS, PY) to find the way to connect.
 
 ## Documentation
 
-### Function by itself
+### Signature
 
 ```
 compareVersions(version1, version2)
@@ -20,46 +20,40 @@ compareVersions(version1, version2)
 
 ### Parameters
 
-- **version1 (String)**: The first version string to be compared
-- **version2 (String)**: The second version string to be compared
+- **version1** `String` — the first version string to compare
+- **version2** `String` — the second version string to compare
 
-### Return codes
+### Return values
 
-#### Normal
+| Value | Meaning |
+|-------|---------|
+| `1`   | `version1` is greater than `version2` |
+| `-1`  | `version1` is less than `version2` |
+| `0`   | `version1` is equal to `version2` |
 
-- **1**: Indicates that '*version1*' is greater than '*version2*'
-- **-1**: Indicates that '*version1*' is less than '*version2*'
-- **0**: Indicates that '*version1*' is equal to '*version2*'
+### Errors
 
-#### Error
-
-- **-2**: Indicates an error code, specifically that some of versions has an incorrect format
-
+Throws an exception if either version string has an incorrect format.
 
 ### Version string format
 
-- Version number in format: MAJOR.MINOR.PATCH
-
-- Pre-release identifiers are available after '-' ```(hyphen)``` symbol
-
-- Build metadata identifiers are available after '+' ```(plus)``` sign
-
-- A version MAY NOT contain pre-release or metadata identifiers, but it MAY contain either one of them or both simultaneously.
-
-- If the initial letters of two prereleases of versions are the same then the version with the most characters will be greater.
-
-- If one version contains build metadata and the other does not, and both versions have the same MAJOR.MINOR.PATCH, and they have no pre-releases or their pre-releases are the same, these versions are considered equal
+- Version number in format: `MAJOR.MINOR.PATCH`
+- Pre-release identifiers are available after `-` (hyphen): `1.0.0-alpha.1`
+- Build metadata identifiers are available after `+` (plus): `1.0.0+build.1`
+- A version MAY NOT contain pre-release or metadata identifiers, but MAY contain either one or both simultaneously
+- Build metadata is ignored when determining version precedence
+- Versions prefixed with `v` are not supported
 
 ### Examples
 
-#### Correct version format
+#### Correct format
 
-- 1.5.0
-- 1.2.3-pre1.2.3
-- 0.2.4-release
-- 2.9.3-rc.3.beta
-- 2.2.9+version------fixed
-- 0.0.1+build0.1
+- `1.5.0`
+- `1.2.3-pre1.2.3`
+- `0.2.4-release`
+- `2.9.3-rc.3.beta`
+- `2.2.9+version------fixed`
+- `0.0.1+build0.1`
 
 #### Incorrect format
 

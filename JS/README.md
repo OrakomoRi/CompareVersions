@@ -16,3 +16,7 @@ Integrate it on your page by the following [link](https://cdn.jsdelivr.net/gh/Or
 ```js
 let result = compareVersions(version1, version2);
 ```
+
+## Errors
+
+Throws a `TypeError` if either version string has an incorrect format.
